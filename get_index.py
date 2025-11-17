@@ -50,7 +50,6 @@ def gen_index(raw_df, tgae, device):
         raise ValueError(f"The following proteins are not allowed: {invalid_proteins}")
     
     raw_df = raw_df.astype(np.float32)
-    std_df = proteins_info.match_ukb_dist(raw_df)
 
     sasp_index_list = []
     for _, row in std_df.iterrows():
