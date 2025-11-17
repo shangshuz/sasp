@@ -1,6 +1,7 @@
 import numpy as np
 import torch
 import utils
+import proteins_info
 
 def gen_single_index(row, tgae, device):
     """
@@ -49,7 +50,7 @@ def gen_index(raw_df, tgae, device):
         raise ValueError(f"The following proteins are not allowed: {invalid_proteins}")
     
     raw_df = raw_df.astype(np.float32)
-    std_df = utils.match_ukb_dist(raw_df)
+    std_df = proteins_info.match_ukb_dist(raw_df)
 
     sasp_index_list = []
     for _, row in std_df.iterrows():
