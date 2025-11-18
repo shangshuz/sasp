@@ -52,7 +52,7 @@ def gen_index(raw_df, tgae, device):
     raw_df = raw_df.astype(np.float32)
 
     sasp_index_list = []
-    for _, row in std_df.iterrows():
+    for _, row in raw_df.iterrows():
         output = gen_single_index(row, tgae, device)
         sasp_index_list.append(output)
 

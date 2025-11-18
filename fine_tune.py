@@ -91,7 +91,7 @@ def fine_tune(
         tgae, optimizer, train_loss = train_one_epoch(tgae, proteins_embedding, train_loader, optimizer)
         train_losses.append(train_loss)
 
-        tgae, optimizer, valid_loss = train_one_epoch(tgae, proteins_embedding, valid_loader, optimizer)
+        tgae, optimizer, valid_loss = valid_one_epoch(tgae, proteins_embedding, valid_loader, optimizer)
         valid_losses.append(valid_loss)
 
     return tgae, train_losses, valid_losses
